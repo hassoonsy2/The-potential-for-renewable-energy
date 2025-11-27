@@ -23,11 +23,26 @@ To install these plugins:
 3.  Search for the plugin name (e.g., "PDOK Services", "QuickMapServices").
 4.  Click **Install Plugin**.
 
+## Data Setup
+
+To ensure all map layers load correctly, you need to have the local data files available.
+
+1.  **Download the Data**:
+    * Download the `layers.zip` file from the [layers](https://drive.google.com/file/d/19gNFlPqbDpwquv2_VeQXRk9POzU4SREb/view?usp=share_link). 
+    * Unzip the file into the root directory of this project. You should end up with a folder named `layers` containing `.shp` and `.tif` files.
+
+2.  **Open the Project**:
+    *   Double-click `Qgis_project.qgz`.
+
+3.  **Fixing Missing Layers (if needed)**:
+    *   If QGIS warns about "Handle Bad Layers" upon opening, it means it can't find the data files.
+    *   Click **Auto-Find** in the dialog, or manually browse to the `layers/` folder to locate the missing shapefiles (e.g., `gis_osm_buildings_a_free_1.shp`).
+    *   Once one file is found, QGIS usually finds the rest automatically.
+    *   Click **Apply Changes** or **OK**.
+
 ## Data Layers
 
-The `layers/` directory contains the local geospatial data used in this project. This ensures that the project can be opened with the necessary data sources even without an active internet connection for some layers (though WMS/WFS layers from plugins will still require internet).
-
-**Contents:**
+The `layers/` directory contains the local geospatial data used in this project:
 
 *   **OpenStreetMap (OSM) Data**: Shapefiles (`.shp`) for various features such as:
     *   Buildings (`gis_osm_buildings_a_free_1.shp`)
@@ -35,4 +50,4 @@ The `layers/` directory contains the local geospatial data used in this project.
     *   Natural features (`gis_osm_natural_a_free_1.shp`)
     *   Infrastructure: Railways, Roads, Waterways.
 *   **Wind Data**: Raster data for wind speed (`noord_holland_wind-speed_100m.tif`).
-*   **Styles**: QGIS Layer Style files (`.qml`) for visualizing power infrastructure (power lines, substations).
+*   **Styles**: QGIS Layer Style files (`.qml`) for visualizing power infrastructure.
